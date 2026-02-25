@@ -1,0 +1,41 @@
+# Android Studio / Gradle
+.gradle/
+.idea/
+*.iml
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Local config (never commit this)
+/local.properties
+
+# Kotlin
+/.kotlin
+
+# Logs and caches
+*.log
+.local/
+
+# Compiled output
+*.apk
+*.ap_
+*.dex
+*.class
+*.jar
+
+# Signing keys (never commit these)
+*.keystore
+*.jks
+
+# Firebase (if added later)
+google-services.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Misc
+dist/
+.env
+node_modules/
