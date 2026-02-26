@@ -164,20 +164,23 @@ private fun FavoritesCard(favoriteCount: Int, modifier: Modifier = Modifier) {
 
 @Composable
 private fun ContactInfoCard(user: User, modifier: Modifier = Modifier) {
-    Card(modifier = modifier.fillMaxWidth()) {
+    Card(
+        modifier = modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = Color.White)
+    ) {
         Column(modifier = Modifier.padding(16.dp)) {
             ContactRow(
                 icon = Icons.Default.Email,
                 label = stringResource(R.string.profile_email),
                 value = user.email
             )
-            HorizontalDivider(modifier = Modifier.padding(vertical = 12.dp))
+            HorizontalDivider(color = Color.Black, modifier = Modifier.padding(vertical = 12.dp))
             ContactRow(
                 icon = Icons.Default.Phone,
                 label = stringResource(R.string.profile_phone),
                 value = user.phone
             )
-            HorizontalDivider(modifier = Modifier.padding(vertical = 12.dp))
+            HorizontalDivider(color = Color.Black, modifier = Modifier.padding(vertical = 12.dp))
             ContactRow(
                 icon = Icons.Default.LocationOn,
                 label = stringResource(R.string.profile_address),
@@ -205,6 +208,7 @@ private fun ContactRow(
             Text(
                 text = label,
                 style = MaterialTheme.typography.labelMedium,
+                fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
             Spacer(modifier = Modifier.height(2.dp))
