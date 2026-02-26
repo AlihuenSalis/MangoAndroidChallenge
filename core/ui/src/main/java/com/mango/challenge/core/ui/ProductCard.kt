@@ -25,6 +25,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -48,8 +49,8 @@ fun ProductCard(
         Column {
             AsyncImage(
                 model = product.image,
-                contentDescription = product.title,
-                contentScale = ContentScale.Crop,
+                contentDescription = stringResource(R.string.cd_product_image),
+                contentScale = ContentScale.Fit,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(180.dp)
@@ -72,7 +73,7 @@ fun ProductCard(
                             imageVector = if (product.isFavorite) Icons.Default.Favorite
                                           else Icons.Default.FavoriteBorder,
                             contentDescription = null,
-                            tint = if (product.isFavorite) Color.Red else Color.Gray
+                            tint = if (product.isFavorite) Color.Black else Color.Gray
                         )
                     }
                 }

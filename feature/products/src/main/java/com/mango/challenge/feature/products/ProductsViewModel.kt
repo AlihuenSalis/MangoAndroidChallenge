@@ -7,10 +7,12 @@ import com.mango.challenge.core.domain.usecase.GetProductsUseCase
 import com.mango.challenge.core.domain.usecase.ToggleFavoriteUseCase
 import com.mango.challenge.core.ui.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -44,7 +46,9 @@ class ProductsViewModel @Inject constructor(
                     applyFilter()
                 }
             } catch (e: Exception) {
-                _uiState.update { it.copy(productsState = UiState.Error(e.message ?: "Unknown error")) }
+                _uiState.update {
+                    it.copy(productsState = UiState.Error("No se pudo cargar la información. Verifica tu conexión a internet."))
+                }
             }
         }
     }
@@ -61,18 +65,22 @@ class ProductsViewModel @Inject constructor(
     }
 
     fun onRefresh() {
-        collectJob?.cancel()
-        collectJob = viewModelScope.launch {
+        viewModelScope.launch {
             _isRefreshing.value = true
+            collectJob?.cancel()
             try {
-                getProductsUseCase().collect { products ->
-                    allProducts = products
-                    applyFilter()
-                    _isRefreshing.value = false
-                }
+                val products = getProductsUseCase().first()
+                allProducts = products
+                _uiState.update { it.copy(searchQuery = "") }
+                applyFilter()
+            } catch (e: CancellationException) {
+                throw e
             } catch (e: Exception) {
+                // keep current list visible on failure
+            } finally {
                 _isRefreshing.value = false
-                _uiState.update { it.copy(productsState = UiState.Error(e.message ?: "Unknown error")) }
+                // restart the continuous collection after refresh
+                loadProducts()
             }
         }
     }

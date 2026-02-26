@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">MangoAndroidChallenge</string>
-    <string name="tab_products">Products</string>
-    <string name="tab_favorites">Favorites</string>
-    <string name="tab_profile">Profile</string>
+    <string name="app_name">Mango Challenge</string>
+
+    <!-- Bottom navigation tabs -->
+    <string name="tab_products">Productos</string>
+    <string name="tab_favorites">Favoritos</string>
+    <string name="tab_profile">Perfil</string>
 </resources>

@@ -29,7 +29,7 @@ class FavoritesViewModel @Inject constructor(
                     _uiState.value = UiState.Success(favorites)
                 }
             } catch (e: Exception) {
-                _uiState.value = UiState.Error(e.message ?: "Unknown error")
+                _uiState.value = UiState.Error("No se pudo cargar la información. Verifica tu conexión a internet.")
             }
         }
     }

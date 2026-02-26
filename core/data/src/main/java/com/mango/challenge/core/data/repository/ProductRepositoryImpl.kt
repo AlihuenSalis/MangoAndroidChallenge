@@ -19,7 +19,13 @@ class ProductRepositoryImpl @Inject constructor(
 ) : ProductRepository {
 
     override fun getProducts(): Flow<List<Product>> = combine(
-        flow { emit(remoteDataSource.getProducts()) },
+        flow {
+            try {
+                emit(remoteDataSource.getProducts())
+            } catch (e: Exception) {
+                throw e  // propagate the exception so combine fails and callers can catch it
+            }
+        },
         localDataSource.getFavoriteIds()
     ) { dtos, ids ->
         dtos.map { it.toDomain(isFavorite = it.id in ids) }

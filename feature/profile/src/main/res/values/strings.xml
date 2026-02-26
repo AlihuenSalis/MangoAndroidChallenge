@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="profile_error">Failed to load profile</string>
-    <string name="profile_favorites">%d favorites</string>
-    <string name="profile_label_email">Email</string>
-    <string name="profile_label_phone">Phone</string>
-    <string name="profile_label_address">Address</string>
+    <!-- TopAppBar title -->
+    <string name="title_profile">Perfil</string>
+
+    <!-- Favorites count -->
+    <string name="profile_favorites_count">Favoritos: %d</string>
+
+    <!-- Contact labels -->
+    <string name="profile_email">Email</string>
+    <string name="profile_phone">Teléfono</string>
+    <string name="profile_address">Dirección</string>
 </resources>

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="retry">Retry</string>
-    <string name="cd_favorite">Add to favorites</string>
-    <string name="cd_unfavorite">Remove from favorites</string>
+    <!-- States -->
+    <string name="loading">Cargando…</string>
+    <string name="error_generic">No se pudo cargar la información. Verifica tu conexión a internet.</string>
+    <string name="btn_retry">Reintentar</string>
+
+    <!-- Product card -->
+    <string name="cd_product_image">Imagen del producto</string>
 </resources>

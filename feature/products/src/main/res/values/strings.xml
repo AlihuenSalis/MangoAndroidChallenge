@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="search_products">Search products</string>
-    <string name="products_error">Failed to load products</string>
-    <string name="products_empty">No products found</string>
+    <!-- TopAppBar title -->
+    <string name="title_products">Lista de productos</string>
+
+    <!-- Search -->
+    <string name="search_placeholder">Buscar productos…</string>
+
+    <!-- Empty state -->
+    <string name="empty_products">No se encontraron productos</string>
 </resources>

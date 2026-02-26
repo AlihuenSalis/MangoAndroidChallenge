@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="no_favorites">No favorites yet</string>
-    <string name="favorites_error">Failed to load favorites</string>
+    <!-- TopAppBar title -->
+    <string name="title_favorites">Favoritos</string>
+
+    <!-- Section label -->
+    <string name="favorites_title">Mis favoritos</string>
+
+    <!-- Empty state -->
+    <string name="empty_favorites">No tenés productos favoritos todavía</string>
 </resources>
