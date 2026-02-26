@@ -1,5 +1,8 @@
 package alidev.projects.mangoandroidchallenge
 
+import alidev.projects.mangoandroidchallenge.navigation.MangoNavGraph
+import alidev.projects.mangoandroidchallenge.navigation.Screen
+import alidev.projects.mangoandroidchallenge.ui.theme.MangoAndroidChallengeTheme
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -17,9 +20,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import alidev.projects.mangoandroidchallenge.navigation.MangoNavGraph
-import alidev.projects.mangoandroidchallenge.navigation.Screen
-import alidev.projects.mangoandroidchallenge.ui.theme.MangoAndroidChallengeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
