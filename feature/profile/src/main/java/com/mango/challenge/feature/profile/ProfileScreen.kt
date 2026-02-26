@@ -140,7 +140,7 @@ private fun ProfileHeader(user: User) {
 private fun FavoritesCard(favoriteCount: Int, modifier: Modifier = Modifier) {
     Card(
         modifier = modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFFFFEBEB))
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
     ) {
         Row(
             modifier = Modifier.padding(horizontal = 20.dp, vertical = 16.dp),
@@ -166,7 +166,7 @@ private fun FavoritesCard(favoriteCount: Int, modifier: Modifier = Modifier) {
 private fun ContactInfoCard(user: User, modifier: Modifier = Modifier) {
     Card(
         modifier = modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = Color.White)
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             ContactRow(
@@ -174,13 +174,13 @@ private fun ContactInfoCard(user: User, modifier: Modifier = Modifier) {
                 label = stringResource(R.string.profile_email),
                 value = user.email
             )
-            HorizontalDivider(color = Color.Black, modifier = Modifier.padding(vertical = 12.dp))
+            HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant, modifier = Modifier.padding(vertical = 12.dp))
             ContactRow(
                 icon = Icons.Default.Phone,
                 label = stringResource(R.string.profile_phone),
                 value = user.phone
             )
-            HorizontalDivider(color = Color.Black, modifier = Modifier.padding(vertical = 12.dp))
+            HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant, modifier = Modifier.padding(vertical = 12.dp))
             ContactRow(
                 icon = Icons.Default.LocationOn,
                 label = stringResource(R.string.profile_address),
