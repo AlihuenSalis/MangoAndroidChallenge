@@ -44,7 +44,7 @@ class ProductsViewModel @Inject constructor(
                     allProducts = products
                     applyFilter()
                 }
-            } catch (e: Exception) {
+            } catch (_: Exception) {
                 _uiState.update {
                     it.copy(productsState = UiState.Error("No se pudo cargar la información. Verifica tu conexión a internet."))
                 }

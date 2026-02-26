@@ -28,7 +28,7 @@ class FavoritesViewModel @Inject constructor(
                 getFavoritesUseCase().collect { favorites ->
                     _uiState.value = UiState.Success(favorites)
                 }
-            } catch (e: Exception) {
+            } catch (_: Exception) {
                 _uiState.value = UiState.Error("No se pudo cargar la información. Verifica tu conexión a internet.")
             }
         }

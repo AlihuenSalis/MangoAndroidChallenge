@@ -32,7 +32,7 @@ class ProfileViewModel @Inject constructor(
             try {
                 val user = getUserProfileUseCase()
                 _uiState.update { it.copy(userState = UiState.Success(user)) }
-            } catch (e: Exception) {
+            } catch (_: Exception) {
                 _uiState.update { it.copy(userState = UiState.Error("No se pudo cargar la información. Verifica tu conexión a internet.")) }
             }
         }

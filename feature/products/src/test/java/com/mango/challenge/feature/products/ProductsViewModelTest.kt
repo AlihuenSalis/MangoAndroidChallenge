@@ -1,6 +1,5 @@
 package com.mango.challenge.feature.products
 
-import app.cash.turbine.test
 import com.mango.challenge.core.domain.usecase.GetProductsUseCase
 import com.mango.challenge.core.domain.usecase.ToggleFavoriteUseCase
 import com.mango.challenge.core.testing.MainDispatcherRule
