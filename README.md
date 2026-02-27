@@ -91,3 +91,19 @@ Todos los textos de la interfaz están externalizados en archivos `strings.xml` 
 3. Ejecutar en un dispositivo o emulador con API 24+
 
 No se necesita ninguna clave de API ni configuración adicional.
+
+---
+
+## Posibles mejoras
+- **Paginacion:** Implementar paginacion con Paging 3 para la lista de productos.
+- **Cache de red:** Agregar una capa de cache con Room o OkHttp cache para el listado de productos, reduciendo llamadas a la API.
+- **Filtros avanzados:** Filtrado por precio, valoracion o combinaciones multiples.
+- **Detalle de producto:** Pantalla de detalle con descripcion completa, galeria de imagenes y productos relacionados.
+- **Autenticacion real:** Reemplazar el usuario hardcodeado por un flujo de login/registro.
+- **Offline-first:** Estrategia completa offline-first sincronizando productos remotos con la base de datos local.
+- **Migraciones de base de datos:** Implementar migraciones de Room para actualizaciones futuras del esquema.
+- **CI/CD:** Configurar GitHub Actions para build automatico, lint y ejecucion de tests.
+- **Accesibilidad:** Mejorar soporte de accesibilidad con contentDescription mas descriptivos y soporte de TalkBack.
+- **Analytics:** Integracion con Firebase Analytics para tracking de eventos de usuario.
+- **Manejo de errores granular:** Distinguir entre errores de red, timeout, servidor, etc. con mensajes especificos.
+- **Animaciones:** Transiciones entre pantallas y animacion del toggle de favorito.
